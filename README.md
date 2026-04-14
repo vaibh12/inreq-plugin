@@ -2,12 +2,13 @@
 
 Request from inside. Lightweight API client for IntelliJ — type your endpoint, hit Send, debug your code.
 
+Skip switching to Postman or managing heavy collections. Test your APIs directly where you write your code.
+
 ## Setup (one time)
 
-1. Build: `./gradlew buildPlugin`
-2. Install: Settings > Plugins > gear > Install Plugin from Disk > select `build/distributions/inreq-plugin-1.0.0.zip`
-3. Restart IntelliJ
-4. Set your port: Settings > Tools > InReq > Server port (default: 8080)
+1. Install: Settings > Plugins > gear > Install Plugin from Disk > select `inreq-plugin-1.0.0.zip`
+2. Restart IntelliJ
+3. Set your port: Settings > Tools > InReq > Server port (default: 8080)
 
 ## Usage
 
@@ -49,7 +50,7 @@ Settings > Tools > InReq
 
 ## For your team
 
-Share the ZIP: `build/distributions/inreq-plugin-1.0.0.zip`
+Share the ZIP: `inreq-plugin-1.0.0.zip`
 
 Each developer:
 1. Settings > Plugins > gear > Install Plugin from Disk
@@ -58,9 +59,3 @@ Each developer:
 
 No external dependencies. No cloud services. Everything runs locally.
 
-## Build from source
-
-```
-./gradlew runIde          # test in sandbox
-./gradlew buildPlugin     # build installable ZIP
-```
