@@ -59,3 +59,6 @@ Each developer:
 
 No external dependencies. No cloud services. Everything runs locally.
 
+<img width="898" height="407" alt="image (10)" src="https://github.com/user-attachments/assets/39428589-c15c-4558-815b-5c619025e9af" />
+
+
