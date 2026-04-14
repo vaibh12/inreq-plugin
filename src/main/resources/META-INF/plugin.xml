@@ -1,0 +1,54 @@
+<idea-plugin>
+    <id>com.inreq.plugin</id>
+    <name>InReq</name>
+    <vendor>Your Company</vendor>
+    <version>1.0.0</version>
+
+    <description><![CDATA[
+    Lightweight API client that auto-detects your running server and sends requests to it.
+    Works in both Run and Debug mode - if breakpoints are set, they fire automatically.
+    ]]></description>
+
+    <idea-version since-build="242" until-build="265.*"/>
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="InReq"
+            anchor="right"
+            factoryClass="com.inreq.plugin.toolwindow.InReqToolWindowFactory"
+            icon="/icons/pluginIcon.svg"/>
+
+        <projectConfigurable
+            parentId="tools"
+            instance="com.inreq.plugin.settings.PluginSettingsConfigurable"
+            id="InReq.Settings"
+            displayName="InReq"/>
+
+        <projectService serviceImplementation="com.inreq.plugin.settings.PluginSettings"/>
+        <projectService serviceImplementation="com.inreq.plugin.services.HttpClientService"/>
+        <projectService serviceImplementation="com.inreq.plugin.services.ServerDetectorService"/>
+        <projectService serviceImplementation="com.inreq.plugin.services.HistoryService"/>
+
+        <notificationGroup id="InReq" displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="InReq.Send"
+            class="com.inreq.plugin.actions.SendRequestAction"
+            text="Send API Request"
+            description="Send request to the running server"
+            icon="AllIcons.Actions.Execute">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift R"/>
+        </action>
+
+        <action
+            id="InReq.Open"
+            class="com.inreq.plugin.actions.OpenToolWindowAction"
+            text="InReq"
+            description="Open InReq">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
